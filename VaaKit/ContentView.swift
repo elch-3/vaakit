@@ -1,25 +1,32 @@
-//
-//  ContentView.swift
-//  VaaKit
-//
-//  Created by Abc Abc on 25.11.2025.
-//
-
 import SwiftUI
 import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    // State, joka hallitsee AddItemViewin näyttämistä
+    @State private var showingAddItem = false
 
     var body: some View {
         NavigationSplitView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        VStack(alignment: .leading) {
+                            Text("Item created at:")
+                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                .font(.headline)
+                            Text("Field1: \(item.paino)")
+                            Text("Field2: \(item.field2)")
+                        }
+                        .padding()
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        VStack(alignment: .leading) {
+                            Text(item.paino)
+                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                .font(.caption)
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -29,20 +36,21 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button {
+                        showingAddItem = true
+                    } label: {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
             }
+            // Avataan AddItemView modaalisesti
+            .sheet(isPresented: $showingAddItem) {
+                NavigationStack {
+                    AddItemView()
+                }
+            }
         } detail: {
             Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
         }
     }
 
@@ -53,9 +61,12 @@ struct ContentView: View {
             }
         }
     }
+    
+    
 }
 
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
+

@@ -1,3 +1,11 @@
+//
+//  AddItemView.swift
+//  VaaKit
+//
+//  Created by Abc Abc on 25.11.2025.
+//
+
+
 import SwiftUI
 import SwiftData
 
@@ -33,7 +41,7 @@ struct AddItemView: View {
     private func save() {
         let newItem = Item(
             timestamp: Date(),
-            field1: field1,
+            _paino: field1,
             field2: field2
         )
         modelContext.insert(newItem)
