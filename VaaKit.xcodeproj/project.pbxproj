@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		1E9BC0C22ED6250100B5CF3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E9BC0A72ED624FE00B5CF3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E9BC0AE2ED624FE00B5CF3F;
+			remoteInfo = VaaKit;
+		};
+		1E9BC0CC2ED6250100B5CF3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E9BC0A72ED624FE00B5CF3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E9BC0AE2ED624FE00B5CF3F;
+			remoteInfo = VaaKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E9BC0AF2ED624FE00B5CF3F /* VaaKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VaaKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E9BC0C12ED6250100B5CF3F /* VaaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E9BC0CB2ED6250100B5CF3F /* VaaKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaaKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1E9BC0B12ED624FE00B5CF3F /* VaaKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VaaKit;
+			sourceTree = "<group>";
+		};
+		1E9BC0C42ED6250100B5CF3F /* VaaKitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VaaKitTests;
+			sourceTree = "<group>";
+		};
+		1E9BC0CE2ED6250100B5CF3F /* VaaKitUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = VaaKitUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E9BC0AC2ED624FE00B5CF3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0BE2ED6250100B5CF3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0C82ED6250100B5CF3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E9BC0A62ED624FE00B5CF3F = {
+			isa = PBXGroup;
+			children = (
+				1E9BC0B12ED624FE00B5CF3F /* VaaKit */,
+				1E9BC0C42ED6250100B5CF3F /* VaaKitTests */,
+				1E9BC0CE2ED6250100B5CF3F /* VaaKitUITests */,
+				1E9BC0B02ED624FE00B5CF3F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E9BC0B02ED624FE00B5CF3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E9BC0AF2ED624FE00B5CF3F /* VaaKit.app */,
+				1E9BC0C12ED6250100B5CF3F /* VaaKitTests.xctest */,
+				1E9BC0CB2ED6250100B5CF3F /* VaaKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E9BC0AE2ED624FE00B5CF3F /* VaaKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9BC0D52ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKit" */;
+			buildPhases = (
+				1E9BC0AB2ED624FE00B5CF3F /* Sources */,
+				1E9BC0AC2ED624FE00B5CF3F /* Frameworks */,
+				1E9BC0AD2ED624FE00B5CF3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1E9BC0B12ED624FE00B5CF3F /* VaaKit */,
+			);
+			name = VaaKit;
+			packageProductDependencies = (
+			);
+			productName = VaaKit;
+			productReference = 1E9BC0AF2ED624FE00B5CF3F /* VaaKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E9BC0C02ED6250100B5CF3F /* VaaKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9BC0D82ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKitTests" */;
+			buildPhases = (
+				1E9BC0BD2ED6250100B5CF3F /* Sources */,
+				1E9BC0BE2ED6250100B5CF3F /* Frameworks */,
+				1E9BC0BF2ED6250100B5CF3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E9BC0C32ED6250100B5CF3F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1E9BC0C42ED6250100B5CF3F /* VaaKitTests */,
+			);
+			name = VaaKitTests;
+			packageProductDependencies = (
+			);
+			productName = VaaKitTests;
+			productReference = 1E9BC0C12ED6250100B5CF3F /* VaaKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E9BC0CA2ED6250100B5CF3F /* VaaKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9BC0DB2ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKitUITests" */;
+			buildPhases = (
+				1E9BC0C72ED6250100B5CF3F /* Sources */,
+				1E9BC0C82ED6250100B5CF3F /* Frameworks */,
+				1E9BC0C92ED6250100B5CF3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E9BC0CD2ED6250100B5CF3F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1E9BC0CE2ED6250100B5CF3F /* VaaKitUITests */,
+			);
+			name = VaaKitUITests;
+			packageProductDependencies = (
+			);
+			productName = VaaKitUITests;
+			productReference = 1E9BC0CB2ED6250100B5CF3F /* VaaKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E9BC0A72ED624FE00B5CF3F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					1E9BC0AE2ED624FE00B5CF3F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					1E9BC0C02ED6250100B5CF3F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1E9BC0AE2ED624FE00B5CF3F;
+					};
+					1E9BC0CA2ED6250100B5CF3F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1E9BC0AE2ED624FE00B5CF3F;
+					};
+				};
+			};
+			buildConfigurationList = 1E9BC0AA2ED624FE00B5CF3F /* Build configuration list for PBXProject "VaaKit" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E9BC0A62ED624FE00B5CF3F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1E9BC0B02ED624FE00B5CF3F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E9BC0AE2ED624FE00B5CF3F /* VaaKit */,
+				1E9BC0C02ED6250100B5CF3F /* VaaKitTests */,
+				1E9BC0CA2ED6250100B5CF3F /* VaaKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E9BC0AD2ED624FE00B5CF3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0BF2ED6250100B5CF3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0C92ED6250100B5CF3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E9BC0AB2ED624FE00B5CF3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0BD2ED6250100B5CF3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E9BC0C72ED6250100B5CF3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E9BC0C32ED6250100B5CF3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E9BC0AE2ED624FE00B5CF3F /* VaaKit */;
+			targetProxy = 1E9BC0C22ED6250100B5CF3F /* PBXContainerItemProxy */;
+		};
+		1E9BC0CD2ED6250100B5CF3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E9BC0AE2ED624FE00B5CF3F /* VaaKit */;
+			targetProxy = 1E9BC0CC2ED6250100B5CF3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E9BC0D32ED6250100B5CF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1E9BC0D42ED6250100B5CF3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E9BC0D62ED6250100B5CF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VaaKit/Preview Content\"";
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E9BC0D72ED6250100B5CF3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VaaKit/Preview Content\"";
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1E9BC0D92ED6250100B5CF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VaaKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VaaKit";
+			};
+			name = Debug;
+		};
+		1E9BC0DA2ED6250100B5CF3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VaaKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VaaKit";
+			};
+			name = Release;
+		};
+		1E9BC0DC2ED6250100B5CF3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VaaKit;
+			};
+			name = Debug;
+		};
+		1E9BC0DD2ED6250100B5CF3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ2U2UJQAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elchplay.VaaKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VaaKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E9BC0AA2ED624FE00B5CF3F /* Build configuration list for PBXProject "VaaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9BC0D32ED6250100B5CF3F /* Debug */,
+				1E9BC0D42ED6250100B5CF3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E9BC0D52ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9BC0D62ED6250100B5CF3F /* Debug */,
+				1E9BC0D72ED6250100B5CF3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E9BC0D82ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9BC0D92ED6250100B5CF3F /* Debug */,
+				1E9BC0DA2ED6250100B5CF3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E9BC0DB2ED6250100B5CF3F /* Build configuration list for PBXNativeTarget "VaaKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E9BC0DC2ED6250100B5CF3F /* Debug */,
+				1E9BC0DD2ED6250100B5CF3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E9BC0A72ED624FE00B5CF3F /* Project object */;
+}
