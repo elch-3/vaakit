@@ -12,12 +12,14 @@ import SwiftData
 @Model
 class Item {
     var timestamp: Date
-    var paino: String
-    var field2: String
+    var height: Double  // pituus metreinä
+    var weight: Double  // paino kg
+    var bmi: Double     // painoindeksi
 
-    init(timestamp: Date, _paino: String = "", field2: String = "") {
+    init(timestamp: Date = Date(), height: Double = 0.0, weight: Double = 0.0, bmi: Double = 0.0) {
         self.timestamp = timestamp
-        self.paino = _paino
-        self.field2 = field2
+        self.height = height
+        self.weight = weight
+        self.bmi = bmi
     }
 }

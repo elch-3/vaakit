@@ -13,17 +13,18 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 8) {
                             Text("Item created at:")
                             Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                                 .font(.headline)
-                            Text("Field1: \(item.paino)")
-                            Text("Field2: \(item.field2)")
+                            
+                            Text("Height: \(String(format: "%.1f", item.height)) cm")
+                            Text("Weight: \(String(format: "%.1f", item.weight)) kg")
                         }
                         .padding()
                     } label: {
                         VStack(alignment: .leading) {
-                            Text(item.paino)
+                            Text("Height: \(String(format: "%.1f", item.height)) cm, Weight: \(String(format: "%.1f", item.weight)) kg")
                             Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                                 .font(.caption)
                         }

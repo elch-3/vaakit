@@ -1,11 +1,3 @@
-//
-//  AddItemView.swift
-//  VaaKit
-//
-//  Created by Abc Abc on 25.11.2025.
-//
-
-
 import SwiftUI
 import SwiftData
 
@@ -13,14 +5,16 @@ struct AddItemView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     
-    @State private var field1: String = ""
-    @State private var field2: String = ""
+    @State private var heightText: String = ""
+    @State private var weightText: String = ""
 
     var body: some View {
         Form {
             Section(header: Text("Item details")) {
-                TextField("First field", text: $field1)
-                TextField("Second field", text: $field2)
+                TextField("Height (cm)", text: $heightText)
+                    .keyboardType(.decimalPad)
+                TextField("Weight (kg)", text: $weightText)
+                    .keyboardType(.decimalPad)
             }
         }
         .navigationTitle("Add Item")
@@ -29,7 +23,7 @@ struct AddItemView: View {
                 Button("Save") {
                     save()
                 }
-                .disabled(field1.isEmpty || field2.isEmpty)
+                .disabled(heightText.isEmpty || weightText.isEmpty)
             }
             
             ToolbarItem(placement: .navigationBarLeading) {
@@ -39,12 +33,24 @@ struct AddItemView: View {
     }
 
     private func save() {
+        guard
+            let height = Double(heightText),
+            let weight = Double(weightText)
+        else {
+            return
+        }
+
+        let heightInMeters = height / 100.0
+        let bmi = weight / (heightInMeters * heightInMeters)
+
         let newItem = Item(
             timestamp: Date(),
-            _paino: field1,
-            field2: field2
+            height: height,
+            weight: weight,
+            bmi: bmi
         )
         modelContext.insert(newItem)
         dismiss()
     }
 }
+
