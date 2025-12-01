@@ -12,6 +12,10 @@ struct ContentView: View {
         NavigationSplitView {
             List {
                 ForEach(items) { item in
+                    Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .omitted))
+                                   .font(.caption)
+                                   .foregroundColor(.secondary)
+               
                     NavigationLink {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Item created at:")
@@ -26,8 +30,8 @@ struct ContentView: View {
                     } label: {
                         VStack(alignment: .leading) {
                             Text("Height: \(String(format: "%.1f", item.height)) cm, Weight: \(String(format: "%.1f", item.weight)) kg, BMI: \(String(format: "%.1f", item.bmi))" )
-                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                                .font(.caption)
+                           // Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                          //      .font(.caption)
                         }
                     }
                 }
@@ -67,8 +71,29 @@ struct ContentView: View {
     
 }
 
+@MainActor
+func previewContainer() -> ModelContainer {
+    let container = try! ModelContainer(
+        for: Item.self,
+        configurations: .init(schema: Schema([Item.self]), isStoredInMemoryOnly: true)
+    )
+    
+    // Lisätään yksi testidata
+    let context = container.mainContext
+    let sampleItem = Item(
+        timestamp: Date(),
+        height: 175.0,
+        weight: 70.0,
+        bmi: 22.9
+    )
+    context.insert(sampleItem)
+    
+    return container
+}
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(previewContainer())
 }
+
 

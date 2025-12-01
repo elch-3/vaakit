@@ -5,7 +5,7 @@ struct AddItemView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     
-    @State private var heightText: String = ""
+    @State private var heightText: String = "155"
     @State private var weightText: String = ""
     @State private var errorMessage: String?
     
