@@ -7,6 +7,15 @@ struct AddItemView: View {
     
     @State private var heightText: String = ""
     @State private var weightText: String = ""
+    @State private var errorMessage: String?
+    
+    private var numberFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current       // esim. "fi_FI"
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 1
+        return formatter
+    }
 
     var body: some View {
         Form {
@@ -15,6 +24,12 @@ struct AddItemView: View {
                     .keyboardType(.decimalPad)
                 TextField("Weight (kg)", text: $weightText)
                     .keyboardType(.decimalPad)
+            }
+            if let error = errorMessage {
+                Section {
+                    Text(error)
+                        .foregroundColor(.red)
+                }
             }
         }
         .navigationTitle("Add Item")
@@ -33,22 +48,28 @@ struct AddItemView: View {
     }
 
     private func save() {
+        let heightValue = heightText.replacingOccurrences(of: numberFormatter.decimalSeparator, with: ".")
+        let weightValue = weightText.replacingOccurrences(of: numberFormatter.decimalSeparator, with: ".")
+      
         guard
-            let height = Double(heightText),
-            let weight = Double(weightText)
+            let height = Double(heightValue),
+            let weight = Double(weightValue)
         else {
+            errorMessage = "Syötä kelvollinen luku (\(numberFormatter.decimalSeparator!) käytössä)."
+
             return
         }
 
-        let heightInMeters = height / 100.0
-        let bmi = weight / (heightInMeters * heightInMeters)
+        let bmi = weight / pow(height / 100.0, 2)
+
+        //let heightInMeters = height / 100.0
 
         let newItem = Item(
-            timestamp: Date(),
-            height: height,
-            weight: weight,
-            bmi: bmi
-        )
+                   timestamp: Date(),
+                   height: height,
+                   weight: weight,
+                   bmi: bmi
+               )
         modelContext.insert(newItem)
         dismiss()
     }

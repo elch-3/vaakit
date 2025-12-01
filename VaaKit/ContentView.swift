@@ -20,11 +20,12 @@ struct ContentView: View {
                             
                             Text("Height: \(String(format: "%.1f", item.height)) cm")
                             Text("Weight: \(String(format: "%.1f", item.weight)) kg")
+                            Text("BMI: \(String(format: "%.1f", item.bmi))")
                         }
                         .padding()
                     } label: {
                         VStack(alignment: .leading) {
-                            Text("Height: \(String(format: "%.1f", item.height)) cm, Weight: \(String(format: "%.1f", item.weight)) kg")
+                            Text("Height: \(String(format: "%.1f", item.height)) cm, Weight: \(String(format: "%.1f", item.weight)) kg, BMI: \(String(format: "%.1f", item.bmi))" )
                             Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                                 .font(.caption)
                         }
