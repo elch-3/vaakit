@@ -13,8 +13,11 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .omitted))
-                                   .font(.caption)
-                                   .foregroundColor(.secondary)
+                        .fontWeight(.bold)
+                        .listRowBackground(Color(.systemGray6))
+                        
+                    //.font(.caption)
+                    //.foregroundColor(.secondary)
                
                     NavigationLink {
                         VStack(alignment: .leading, spacing: 8) {
@@ -23,13 +26,13 @@ struct ContentView: View {
                                 .font(.headline)
                             
                             Text("Height: \(String(format: "%.1f", item.height)) cm")
-                            Text("Weight: \(String(format: "%.1f", item.weight)) kg")
+                            Text("\(String(format: "%.1f", item.weight)) kg")
                             Text("BMI: \(String(format: "%.1f", item.bmi))")
                         }
                         .padding()
                     } label: {
                         VStack(alignment: .leading) {
-                            Text("Height: \(String(format: "%.1f", item.height)) cm, Weight: \(String(format: "%.1f", item.weight)) kg, BMI: \(String(format: "%.1f", item.bmi))" )
+                            Text("\(String(format: "%.1f", item.weight)) kg, BMI: \(String(format: "%.1f", item.bmi))" )
                            // Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                           //      .font(.caption)
                         }
