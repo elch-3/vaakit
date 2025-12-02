@@ -4,22 +4,23 @@
 //
 //  Created by Abc Abc on 25.11.2025.
 //
-
-
 import Foundation
 import SwiftData
 
 @Model
-class Item {
+class Item: Identifiable {
+    @Attribute(.unique) var id: UUID  // UUID-tunniste
     var timestamp: Date
-    var height: Double  // pituus metreinä
+    var height: Double  // pituus cm
     var weight: Double  // paino kg
     var bmi: Double     // painoindeksi
 
-    init(timestamp: Date = Date(), height: Double = 0.0, weight: Double = 0.0, bmi: Double = 0.0) {
+    init(id: UUID = UUID(), timestamp: Date = Date(), height: Double = 0.0, weight: Double = 0.0, bmi: Double = 0.0) {
+        self.id = id
         self.timestamp = timestamp
         self.height = height
         self.weight = weight
         self.bmi = bmi
     }
 }
+
