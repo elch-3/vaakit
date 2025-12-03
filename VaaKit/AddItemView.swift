@@ -5,7 +5,7 @@ struct AddItemView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     
-    @Binding var lastAddedItemId: UUID?
+  //  @Binding var lastAddedItemId: UUID?
     
     @State private var heightText: String = "155"
     @State private var weightText: String = ""
@@ -74,7 +74,7 @@ struct AddItemView: View {
         modelContext.insert(newItem)
         
         // Palautetaan ID
-        lastAddedItemId = newItem.id
+       // lastAddedItemId = newItem.id
         
         dismiss()
     }

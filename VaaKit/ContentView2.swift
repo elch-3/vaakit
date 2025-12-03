@@ -50,7 +50,8 @@ struct ContentView2: View {
             }
             .sheet(isPresented: $showingAddItem) {
                 NavigationStack {
-                    AddItemView(lastAddedItemId: $lastAddedItemId)
+                   // AddItemView(lastAddedItemId: $lastAddedItemId)
+                    AddItemView()
                 }
             }
             .alert("HealthKit Authorization Failed", isPresented: Binding(
