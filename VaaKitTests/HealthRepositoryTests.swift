@@ -1,3 +1,11 @@
+//
+//  HealthRepositoryTests.swift
+//  VaaKit
+//
+//  Created by Abc Abc on 3.12.2025.
+//
+
+
 import XCTest
 import HealthKit
 @testable import VaaKit // vaihda omaan moduulin nimeen
@@ -22,12 +30,15 @@ final class HealthRepositoryTests: XCTestCase {
     func testGetLatestWeightReturnsCorrectValue() async throws {
         // 💡 Arrange: luodaan fake HKQuantitySample painolle
         let quantity = HKQuantity(unit: .gramUnit(with: .kilo), doubleValue: 72.5)
+ 
         let sample = HKQuantitySample(
             type: HKQuantityType.quantityType(forIdentifier: .bodyMass)!,
             quantity: quantity,
             start: Date(timeIntervalSince1970: 1000),
-            end: Date(timeIntervalSince1970: 1000)
+            end: Date(timeIntervalSince1970: 1000),
+            metadata: nil
         )
+        
         mockService.fakeWeight = sample
         
         // 💡 Act
@@ -35,9 +46,16 @@ final class HealthRepositoryTests: XCTestCase {
         
         // 💡 Assert
         XCTAssertNotNil(healthSample, "HealthSample should not be nil")
-        XCTAssertEqual(healthSample?.value, 72.5, accuracy: 0.001)
-        XCTAssertEqual(healthSample?.date, sample.startDate)
-        XCTAssertEqual(healthSample?.rawSample, sample)
+        
+        guard let sampleUnwrapped = healthSample else {
+            XCTFail("HealthSample was nil")
+            return
+        }
+
+        XCTAssertEqual(sampleUnwrapped.value, 72.5, accuracy: 0.001)
+        XCTAssertEqual(sampleUnwrapped.date, sample.startDate)
+        XCTAssertEqual(sampleUnwrapped.rawSample, sample)
+
     }
     
     func testGetLatestHeightReturnsCorrectValue() async throws {
@@ -53,7 +71,12 @@ final class HealthRepositoryTests: XCTestCase {
         let healthSample = try await repository.getLatestHeight()
         
         XCTAssertNotNil(healthSample)
-        XCTAssertEqual(healthSample?.value, 175.0, accuracy: 0.001) // metri → cm
+        guard let sampleUnwrapped = healthSample else {
+            XCTFail("HealthSample was nil")
+            return
+        }
+
+        XCTAssertEqual(healthSample!.value, 175.0, accuracy: 0.001) // metri → cm
         XCTAssertEqual(healthSample?.date, sample.startDate)
         XCTAssertEqual(healthSample?.rawSample, sample)
     }
@@ -71,7 +94,12 @@ final class HealthRepositoryTests: XCTestCase {
         let healthSample = try await repository.getLatestBMI()
         
         XCTAssertNotNil(healthSample)
-        XCTAssertEqual(healthSample?.value, 23.1, accuracy: 0.001)
+        guard let sampleUnwrapped = healthSample else {
+            XCTFail("HealthSample was nil")
+            return
+        }
+
+        XCTAssertEqual(healthSample!.value, 23.1, accuracy: 0.001)
         XCTAssertEqual(healthSample?.date, sample.startDate)
         XCTAssertEqual(healthSample?.rawSample, sample)
     }

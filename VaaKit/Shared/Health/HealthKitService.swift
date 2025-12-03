@@ -11,12 +11,22 @@ import HealthKit
 
 final class HealthKitService: HealthServiceProtocol {
 
-    private let store = HKHealthStore()
-    
     private var weightType: HKQuantityType { .quantityType(forIdentifier: .bodyMass)! }
     private var heightType: HKQuantityType { .quantityType(forIdentifier: .height)! }
     private var bmiType: HKQuantityType { .quantityType(forIdentifier: .bodyMassIndex)! }
 
+    private let store: HKHealthStore
+
+    // ✅ Tuotantokonstruktori
+    init() {
+        self.store = HKHealthStore()
+    }
+    
+    // ✅ Testikonstruktori: injektoi halutun store:n (simulaattori / mock)
+    init(store: HKHealthStore) {
+        self.store = store
+    }
+    
     // MARK: - Authorization
     func requestAuthorization() async throws {
         let toRead: Set = [weightType, heightType, bmiType]

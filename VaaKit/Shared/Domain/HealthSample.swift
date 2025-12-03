@@ -20,6 +20,6 @@ struct HealthSample {
     let type: HealthSampleType 
     let value: Double         // Numeroarvo (kg, cm, jne.)
     let date: Date            // Sample start date
-    let sourceRevision: HKSourceRevision
+    let sourceRevision: HKSourceRevision? // TÄMÄ ON optionaalinen testien takia
     let rawSample: HKQuantitySample // Alkuperäinen HealthKit-sample, sisältää esim. device, metadata, unit jne.
 }

@@ -17,10 +17,15 @@ final class HealthRepository : ObservableObject {
         self.service = service
     }
     
+    func requestAuthorization() async throws {
+        try await service.requestAuthorization()
+    }
     /// Lukee viimeisimmän painon ja muuntaa HealthSampleksi
     func getLatestWeight() async throws -> HealthSample? {
         guard let sample = try await service.readLatestWeightSample() else { return nil }
         let value = sample.quantity.doubleValue(for: .gramUnit(with: .kilo))
+        let startDate = sample.startDate
+        let sourceRevision = sample.sourceRevision
         return HealthSample(
             type: .weight,
             value: value,
