@@ -5,6 +5,8 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
+    @StateObject private var healthRepo = AppContainer.shared.healthRepository
+    
     @State private var showingAddItem = false
     @State private var lastAddedItemId: UUID?
 

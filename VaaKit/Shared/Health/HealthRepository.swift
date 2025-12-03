@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 
-final class HealthRepository {
+final class HealthRepository : ObservableObject {
     
     private let service: HealthServiceProtocol
     
