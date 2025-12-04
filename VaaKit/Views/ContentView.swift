@@ -57,6 +57,12 @@ struct ContentView: View {
            }
 
         }
+        .onChange(of: showingAddItem) {
+            // closure ilman parametreja
+            if !showingAddItem {
+                Task { await vm.load() }
+            }
+        }
         .task {
            await vm.load()
         }
