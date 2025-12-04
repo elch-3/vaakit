@@ -20,20 +20,21 @@ final class AddItemViewModel: ObservableObject {
         self.healthRepo = healthRepo
     }
 
-    func save() async {
+    func save() async -> Bool {
         guard let weight = Double(weightText), weight > 0 else {
             errorMessage = "Syötä kelvollinen paino."
-            return
+            return false
         }
 
         do {
             isSaving = true
+            defer { isSaving = false }
 
             // Tarkista että pituus löytyy
             guard let heightSample = try await healthRepo.getLatestHeight() else {
-                errorMessage = "Pituustietoa ei löytynyt. Lisää ensin pituus."
+                errorMessage = "Pituustietoa ei löytynyt. Lisää ensin pituus Health-sovelluksessa."
                 isSaving = false
-                return
+                return false
             }
 
             let heightCm = heightSample.value
@@ -44,9 +45,11 @@ final class AddItemViewModel: ObservableObject {
             try await healthRepo.saveBMI(bmi)
 
             isSaving = false
+            return true
         } catch {
             errorMessage = "Tallennus epäonnistui: \(error.localizedDescription)"
             isSaving = false
+            return false
         }
     }
 }

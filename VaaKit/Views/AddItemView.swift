@@ -36,7 +36,12 @@ struct AddItemView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save") {
-                    Task { await vm.save(); dismiss() }
+                    Task {
+                        let success = await vm.save()
+                        if success {
+                            dismiss()
+                        }
+                    }
                 }
                 .disabled(vm.weightText.isEmpty || vm.isSaving)
             }
