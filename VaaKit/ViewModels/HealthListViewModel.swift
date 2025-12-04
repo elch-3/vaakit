@@ -11,8 +11,8 @@ import HealthKit
 
 // MARK: - ViewModel
 
-@Observable
-class HealthListViewModel {
+//@Observable
+class HealthListViewModel : ObservableObject {
 
     enum State {
         case loading
@@ -20,8 +20,8 @@ class HealthListViewModel {
         case error(String)
     }
 
-    var state: State = .loading
-    var healthAuthError: Error?
+    @Published var state: State = .loading
+    @Published var healthAuthError: Error?
 
     private let healthRepo = AppContainer.shared.healthRepository
 
@@ -54,9 +54,11 @@ class HealthListViewModel {
         do {
             async let weightSample = healthRepo.getLatestWeight()
             async let bmiSample = healthRepo.getLatestBMI()
+            async let heightSample = healthRepo.getLatestHeight()
 
             let latestWeight = try await weightSample   // HealthSample?
             let latestBmi    = try await bmiSample      // HealthSample?
+            let latestHeight = try await heightSample
 
             guard let w = latestWeight else {
                 self.state = .error("Painotietoa ei löytynyt.")
@@ -76,6 +78,7 @@ class HealthListViewModel {
             let entry = Entry(
                 date: w.date,
                 weight: w.value,
+                height: latestHeight?.value,
                 bmi: matchedBmi
             )
             print("Latest weight: \(String(describing: latestWeight)), BMI: \(String(describing: latestBmi))")

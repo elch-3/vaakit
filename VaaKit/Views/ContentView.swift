@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var vm = HealthListViewModel()
+    @StateObject private var vm = HealthListViewModel()
     @State private var showingAddItem = false
     @State private var isEditing = false
 
-    @StateObject private var healthRepo = AppContainer.shared.healthRepository
+    //@StateObject private var healthRepo = AppContainer.shared.healthRepository
  
     var body: some View {
         NavigationStack {
@@ -70,6 +70,11 @@ struct ContentView: View {
             .padding()
 
         case .loaded(let entries):
+            if let firstEntry = entries.first {
+                Text("Pituus: \(firstEntry.height.formatted()) cm")
+                    .font(.headline)
+                    .padding(.horizontal)
+            }
             List {
                 ForEach(entries) { entry in
                     NavigationLink {
