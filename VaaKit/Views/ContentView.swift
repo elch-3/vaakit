@@ -19,22 +19,29 @@ struct ContentView: View {
         NavigationStack {
             content
                 .navigationTitle("Health-tiedot")
-//                .toolbar {
-//                    ToolbarItemGroup(placement: .navigationBarLeading) {
-//                        EditButton()
-//                    }
-//                    
-//                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-//                        Button {
-//                            showingAddItem = true
-//                        } label: {
-//                            Image(systemName: "plus")
-//                        }
-//                    }
-//                }
+                .toolbar {
+                      
+                    // PLUS
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddItem = true
+                        } label: {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                    }
+                    // EDIT
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+           
+                }
         }
         .sheet(isPresented: $showingAddItem) {
-            AddItemView()
+            NavigationStack {
+               // AddItemView(lastAddedItemId: $lastAddedItemId)
+                AddItemView()
+            }
+           // AddItemView()
         }
         .task {
            await vm.load()
@@ -73,7 +80,7 @@ struct ContentView: View {
                                 .font(.headline)
 
                             HStack {
-                                Text("Paino: \(entry.weight, specifier: "%.1f") kg")
+                                Text("\(entry.weight, specifier: "%.1f") kg")
                                 Text("BMI: \(entry.bmi.map { String(format: "%.1f", $0) } ?? "-")")
                             }
                             .font(.subheadline)
@@ -91,9 +98,10 @@ struct ContentView: View {
     }
 
     private func formatDate(_ date: Date) -> String {
-        let fmt = DateFormatter()
-        fmt.dateStyle = .medium
-        return fmt.string(from: date)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "fi_FI")
+        formatter.dateFormat = "d.M.yyyy"
+        return formatter.string(from: date)
     }
     
 }
