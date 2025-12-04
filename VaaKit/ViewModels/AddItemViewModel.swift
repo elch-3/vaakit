@@ -1,3 +1,13 @@
+//
+//  AddItemViewModel.swift
+//  VaaKit
+//
+//  Created by Abc Abc on 4.12.2025.
+//
+
+import Foundation
+
+
 @MainActor
 final class AddItemViewModel: ObservableObject {
     @Published var weightText: String = ""

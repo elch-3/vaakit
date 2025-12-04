@@ -9,6 +9,7 @@ import Foundation
 struct Entry : Identifiable {
     let id = UUID()
     let date: Date
-    let weight: Double
+    let weight: Double?
+    let height: Double?
     let bmi: Double?   // sallii puuttumisen
 }

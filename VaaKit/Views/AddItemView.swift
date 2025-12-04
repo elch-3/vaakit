@@ -2,6 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct AddItemView: View {
+    
+    @StateObject var vm: AddItemViewModel
+    
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     
@@ -21,26 +24,21 @@ struct AddItemView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Item details")) {
-                TextField("Height (cm)", text: $heightText)
-                    .keyboardType(.decimalPad)
-                TextField("Weight (kg)", text: $weightText)
-                    .keyboardType(.decimalPad)
+            TextField("Paino (kg)", text: $vm.weightText)
+                .keyboardType(.decimalPad)
+            
+            if let error = vm.errorMessage {
+                Text(error).foregroundColor(.red)
             }
-            if let error = errorMessage {
-                Section {
-                    Text(error)
-                        .foregroundColor(.red)
-                }
-            }
+           
         }
         .navigationTitle("Add Item")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Save") {
-                    save()
+                    Task { await vm.save(); dismiss() }
                 }
-                .disabled(heightText.isEmpty || weightText.isEmpty)
+                .disabled(vm.weightText.isEmpty || vm.isSaving)
             }
             
             ToolbarItem(placement: .navigationBarLeading) {

@@ -22,7 +22,7 @@ struct ContentView: View {
                 .toolbar {
                       
                     // PLUS
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             showingAddItem = true
                         } label: {
@@ -39,7 +39,7 @@ struct ContentView: View {
         .sheet(isPresented: $showingAddItem) {
             NavigationStack {
                // AddItemView(lastAddedItemId: $lastAddedItemId)
-                AddItemView()
+                AddItemView(vm: AddItemViewModel(healthRepo: AppContainer.shared.healthRepository))
             }
            // AddItemView()
         }
