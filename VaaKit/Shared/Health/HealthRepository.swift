@@ -24,8 +24,6 @@ final class HealthRepository : ObservableObject {
     func getLatestWeight() async throws -> HealthSample? {
         guard let sample = try await service.readLatestWeightSample() else { return nil }
         let value = sample.quantity.doubleValue(for: .gramUnit(with: .kilo))
-        let startDate = sample.startDate
-        let sourceRevision = sample.sourceRevision
         return HealthSample(
             type: .weight,
             value: value,
@@ -59,5 +57,15 @@ final class HealthRepository : ObservableObject {
             sourceRevision: sample.sourceRevision,
             rawSample: sample
         )
+    }
+    
+    /// Tallentaa painon HealthKittiin
+    func saveWeight(_ value: Double) async throws {
+        try await service.writeWeight(value)
+    }
+    
+    /// Tallentaa BMI:n HealthKittiin
+    func saveBMI(_ value: Double) async throws {
+        try await service.writeBMI(value)
     }
 }
