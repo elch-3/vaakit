@@ -35,8 +35,9 @@ class HealthListViewModel {
         print("fetch tehty")
     }
 
+    @MainActor
     private func requestHealthAuthorization() async {
-        print("requestHealthAuthorization alkaa")
+         print("requestHealthAuthorization alkaa")
         do {
             try await healthRepo.requestAuthorization()
             print("HealthKit authorization ok")
@@ -49,6 +50,7 @@ class HealthListViewModel {
 
     @MainActor
     private func fetchEntries() async {
+
         do {
             async let weightSample = healthRepo.getLatestWeight()
             async let bmiSample = healthRepo.getLatestBMI()

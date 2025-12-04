@@ -37,9 +37,7 @@ struct ContentView: View {
             AddItemView()
         }
         .task {
-            print("Alkaa(((")
-            await requestHealthAuthorization()
-            //await vm.load()
+           await vm.load()
         }
     }
 
@@ -98,11 +96,4 @@ struct ContentView: View {
         return fmt.string(from: date)
     }
     
-    private func requestHealthAuthorization() async {
-        do {
-            try await healthRepo.requestAuthorization()
-        } catch {
-           // healthAuthError = error
-        }
-    }
 }
