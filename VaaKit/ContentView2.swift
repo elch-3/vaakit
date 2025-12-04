@@ -36,18 +36,18 @@ struct ContentView2: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button {
-                        showingAddItem = true
-                    } label: {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    EditButton()
+//                }
+//                ToolbarItem {
+//                    Button {
+//                        showingAddItem = true
+//                    } label: {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
+//            }
             .sheet(isPresented: $showingAddItem) {
                 NavigationStack {
                    // AddItemView(lastAddedItemId: $lastAddedItemId)

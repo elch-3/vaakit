@@ -17,31 +17,45 @@ struct ContentView: View {
  
     var body: some View {
         NavigationStack {
-            content
-                .navigationTitle("Health-tiedot")
-                .toolbar {
-                      
-                    // PLUS
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            showingAddItem = true
-                        } label: {
-                            Label("Add Item", systemImage: "plus")
-                        }
+
+            VStack(spacing: 0) {
+                sisalto
+            }
+            .navigationTitle("Health-tiedot")
+            .toolbar { // toolbar VStackin sisällä, muuten renderöityy kahdesti (jos sisalto.toolbar...)
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    EditButton()
+                    Button {
+                        showingAddItem = true
+                    } label: {
+                        Image(systemName: "plus") // käytä pelkkä icon, ei Label
                     }
-                    // EDIT
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-           
                 }
+            }
+
+//                .toolbar {
+//                      
+//                    // PLUS
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        Button {
+//                            showingAddItem = true
+//                        } label: {
+//                            Label("Add Item", systemImage: "minus")
+//                        }
+//                    }
+//                    // EDIT
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        EditButton()
+//                    }
+//           
+//                }
         }
         .sheet(isPresented: $showingAddItem) {
             NavigationStack {
                // AddItemView(lastAddedItemId: $lastAddedItemId)
                 AddItemView(vm: AddItemViewModel(healthRepo: AppContainer.shared.healthRepository))
-            }
-           // AddItemView()
+           }
+
         }
         .task {
            await vm.load()
@@ -49,11 +63,12 @@ struct ContentView: View {
     }
 
     @ViewBuilder
-    private var content: some View {
+    private var sisalto: some View {
 
         switch vm.state {
-        case .loading:
    
+        case .loading:
+
             VStack {
                 ProgressView()
                 Text("Haetaan HealthKit-tietoja…")
