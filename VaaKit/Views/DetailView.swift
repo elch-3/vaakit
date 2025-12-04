@@ -14,8 +14,8 @@ struct DetailView: View {
             Text(formatDate(entry.date))
                 .font(.title3)
 
-            Text("Paino: \(entry.weight, specifier: "%.1f") kg")
-            Text("BMI: \(entry.bmi.map { String(format: "%.1f", $0) } ?? "-")")
+            Text("Paino: \(entry.weight.formatted()) kg")
+            Text("BMI: \(entry.bmi.formatted())")
 
             Spacer()
         }

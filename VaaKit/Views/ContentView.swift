@@ -76,12 +76,12 @@ struct ContentView: View {
                         DetailView(entry: entry)
                     } label: {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(formatDate(entry.date))
+                            Text((entry.date.formattedFinnish()))
                                 .font(.headline)
 
                             HStack {
-                                Text("\(entry.weight, specifier: "%.1f") kg")
-                                Text("BMI: \(entry.bmi.map { String(format: "%.1f", $0) } ?? "-")")
+                                Text("\(entry.weight.formatted()) kg")
+                                Text("BMI: \(entry.bmi.formatted())")
                             }
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
@@ -96,12 +96,4 @@ struct ContentView: View {
     private func delete(at offsets: IndexSet) {
     //    vm.delete(at: offsets)
     }
-
-    private func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "fi_FI")
-        formatter.dateFormat = "d.M.yyyy"
-        return formatter.string(from: date)
-    }
-    
 }
